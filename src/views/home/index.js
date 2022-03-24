@@ -30,7 +30,6 @@ export const PageContainer = styledComponents.div`
     height: ${({ height }) => height || null};
     margin-top: ${({ top }) => top || null};
     min-height: ${({ minHeight }) => minHeight || null};
-    width: 100%;
 `;
 
 const NavContainer = styledComponents.div`
@@ -102,23 +101,20 @@ const Banner = styledComponents.div`
 
 const CarouselContainer = styledComponents.div`
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    overflow-x: auto;
+    overflow: auto;
     ::-webkit-scrollbar {
-      display: none;
+        display: none;
     }
 `;
 
 const CategoriesWrapper = styledComponents.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 26px;
   gap: 12px;
 `;
 
 const CategoryItem = styledComponents.div`
-width: 100%;
 display: flex;
 flex-direction: column;
 `;

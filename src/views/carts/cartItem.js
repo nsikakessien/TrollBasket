@@ -64,6 +64,16 @@ const CartItem = ({ item, handleDelete }) => {
     dispatch(adjustQty(item.id, e.target.value));
   };
 
+  const handleAdd = async () => {
+    await setValue(value === "" ? 0 : value + 1);
+    dispatch(adjustQty(item.id, value + 1));
+  };
+
+  const handleSub = () => {
+    setValue(value - 1);
+    dispatch(adjustQty(item.id, value - 1));
+  };
+
   return (
     <CartItemBox key={item.id}>
       <TopContainer>
@@ -93,10 +103,7 @@ const CartItem = ({ item, handleDelete }) => {
               height={"28px"}
               border={"0.7px solid #123CD3"}
               right={"7px"}
-              onClick={() => {
-                setValue(value - 1);
-                dispatch(adjustQty(item.id, value));
-              }}
+              onClick={handleSub}
             >
               <MinusIcon />
             </Circle>
@@ -112,10 +119,7 @@ const CartItem = ({ item, handleDelete }) => {
             width={"28px"}
             height={"28px"}
             border={"0.7px solid #123CD3"}
-            onClick={() => {
-              setValue(value === "" ? 0 : value + 1);
-              dispatch(adjustQty(item.id, value));
-            }}
+            onClick={handleAdd}
           >
             <PlusIcon />
           </Circle>
