@@ -48,13 +48,6 @@ const SecondBox = styledComponents.div`
   align-items: center;
 `;
 
-const InputWrapper = styledComponents.input`
-  margin-right: 7px;
-  border: none;
-  width: 25px;
-  text-align: center;
-`;
-
 const CartItem = ({ item, handleDelete }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(item.qty);
