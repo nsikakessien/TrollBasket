@@ -59,19 +59,14 @@ const CartItem = ({ item, handleDelete }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(item.qty);
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
-    dispatch(adjustQty(item.id, e.target.value));
-  };
-
   const handleAdd = async () => {
     await setValue(value === "" ? 0 : value + 1);
-    dispatch(adjustQty(item.id, value + 1));
+    dispatch(adjustQty(item.id, parseInt(value + 1)));
   };
 
   const handleSub = () => {
     setValue(value - 1);
-    dispatch(adjustQty(item.id, value - 1));
+    dispatch(adjustQty(item.id, parseInt(value - 1)));
   };
 
   return (
@@ -102,19 +97,13 @@ const CartItem = ({ item, handleDelete }) => {
               width={"28px"}
               height={"28px"}
               border={"0.7px solid #123CD3"}
-              right={"7px"}
+              right={"8px"}
               onClick={handleSub}
             >
               <MinusIcon />
             </Circle>
           )}
-          <InputWrapper
-            id="qty"
-            name="qty"
-            type="number"
-            value={value}
-            onChange={handleChange}
-          />
+          <Text right={"8px"}>{value}</Text>
           <Circle
             width={"28px"}
             height={"28px"}

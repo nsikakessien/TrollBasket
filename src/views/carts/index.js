@@ -67,7 +67,7 @@ const Carts = () => {
   };
 
   const handleCheckout = () => {
-    const isZero = cart.find((item) => !item.qty || item.qty === "1");
+    const isZero = cart.find((item) => !item.qty);
     if (isZero) {
       setDoAnimate(true);
       setTimeout(() => {
