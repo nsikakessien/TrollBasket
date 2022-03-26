@@ -263,7 +263,7 @@ const Home = () => {
             paddingRight={"20px"}
             borderRight={"0.5px solid #CBD6E0"}
             marginRight={"23px"}
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(true)}
           >
             <Circle right={"5px"}>
               <LocationIcon />
@@ -292,12 +292,7 @@ const Home = () => {
           </NavItem>
           <NavItem onClick={() => navigate("/product/cart")}>
             <Circle right={"14px"}>
-              <SmallCircle
-                top={"3.5%"}
-                right={"15%"}
-                mright={"19%"}
-                mmright={"17%"}
-              >
+              <SmallCircle top={"45px"} right={"59px"}>
                 {cart.length || 0}
               </SmallCircle>
               <CartIcon />
@@ -321,7 +316,7 @@ const Home = () => {
                     key={index}
                     onClick={() => {
                       setText(data);
-                      setOpen(!open);
+                      setOpen(false);
                     }}
                   >
                     {data}
