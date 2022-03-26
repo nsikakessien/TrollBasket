@@ -150,7 +150,7 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const productData = location?.state || {};
-  const count = 4;
+  const count = 1;
   const cart = useSelector((state) => state.shop.cart);
 
   const [showToast, setShowToast] = useState(false);

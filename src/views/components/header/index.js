@@ -68,6 +68,16 @@ export const SmallCircle = styledComponents.div`
     top: ${({ top }) => top || "-5px"};
     text-align: center;
     align-items: center;
+
+       @media (min-width: 412px) {
+    right: ${({ mright }) => mright || null};
+    top: ${({ mtop }) => mtop || null};
+    }
+
+          @media (min-width: 390px) {
+    right: ${({ mmright }) => mmright || null};
+    top: ${({ mmtop }) => mmtop || null};
+    }
 `;
 
 const FixedHeader = ({ title, count, showCart }) => {
